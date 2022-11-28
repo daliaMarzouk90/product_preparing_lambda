@@ -62,7 +62,7 @@ def create_products_messages(products_sets, configurables_variants_map):
 
     #3- append messages to delete
     for idx, product in enumerate(products_sets["to_delete"]):
-        messages.append(message_composer(product, "to_delete", configurables_variants_map[idx]))
+        messages.append(message_composer(product, "to_delete"))
 
     return messages
 
@@ -70,7 +70,7 @@ def create_products_messages(products_sets, configurables_variants_map):
 def run(lang, products_ids):
     products_retrival = DataRetrival(lang, products_ids)
     product_distributer = ProductDistributer()
-    sqs_wrapper = SQSWrapper()
+    sqs_wrapper = SQSWrapper(lang)
 
     #1- catch products
     products = products_retrival.get_prducts_data(products_ids)

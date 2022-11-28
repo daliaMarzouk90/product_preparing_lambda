@@ -5,8 +5,9 @@ def lambda_handler(event, context):
     # TODO implement
     print("****************Start*****************************")
     
-
-    product_preparing_controller.run("ar", [x["body"] for x in event["Records"]])
+    products_ids = [int(x["body"]["product_id"]) for x in event["Records"]]
+    product_preparing_controller.run("ar", products_ids)
+    product_preparing_controller.run("en", products_ids)
     
     print("****************End*****************************")
     return {

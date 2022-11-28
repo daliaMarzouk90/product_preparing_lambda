@@ -11,14 +11,19 @@ queue = None
 
 
 class SQSWrapper:
-    def __init__(self) -> None:
+    def __init__(self, lang) -> None:
+        if lang == "en":
+            sqs_name = config.EN_SQS_NAME
+        else:
+            sqs_name = config.AR_SQS_NAME
+            
         sqs = boto3.resource('sqs',
                     aws_access_key_id = config.AWS_ACCESS_KEY_ID,
                     aws_secret_access_key = config.AWS_SECRET_ACCESS_KEY,
                     region_name = config.AWS_REGION
                     )
 
-        self.queue = sqs.get_queue_by_name(QueueName=config.SQS_NAME)
+        self.queue = sqs.get_queue_by_name(QueueName=sqs_name)
 
     def write_message(self, message):
         pass
