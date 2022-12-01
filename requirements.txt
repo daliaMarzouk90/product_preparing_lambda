@@ -1,4 +1,2 @@
-elasticsearch==7.10.1
+boto3
 requests
-apscheduler
-gunicorn

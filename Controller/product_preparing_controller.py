@@ -24,7 +24,7 @@ def create_variants_configurale_map(items):
     return variants_configurables_map, variants_ids
 
 def create_configurale_child_map(variants_ids, variants_configurables_map, lang):
-    variants_data_retrival = DataRetrival(lang, variants_ids)
+    variants_data_retrival = DataRetrival(lang, variants_ids, lang)
 
     configurables_variants_map = {}
 
@@ -68,7 +68,7 @@ def create_products_messages(products_sets, configurables_variants_map):
 
 
 def run(lang, products_ids):
-    products_retrival = DataRetrival(lang, products_ids)
+    products_retrival = DataRetrival(lang, products_ids, lang)
     product_distributer = ProductDistributer()
     sqs_wrapper = SQSWrapper(lang)
 

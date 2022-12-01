@@ -1,5 +1,5 @@
 import json
-from Config.config import DB_ENDPOINT
+from Config import settings
 import requests
 import logging
 import sys
@@ -13,9 +13,9 @@ class BearerAuth(requests.auth.AuthBase):
         return r
 
 class DataRetrival:
-    def __init__(self, lang, products_ids):
+    def __init__(self, lang, products_ids, lang):
         self.lang = lang
-        self.product_endpoint = DB_ENDPOINT.format(lang)+"products"
+        self.product_endpoint = settings["DB_ENDPOINT"].format(lang)+"products"
         self.compose_request_query(products_ids)
         self.total_count = self.get_docs_total_count()
 
