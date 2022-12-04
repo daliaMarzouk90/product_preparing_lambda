@@ -13,7 +13,7 @@ class BearerAuth(requests.auth.AuthBase):
         return r
 
 class DataRetrival:
-    def __init__(self, lang, products_ids, lang):
+    def __init__(self, lang, products_ids):
         self.lang = lang
         self.product_endpoint = settings["DB_ENDPOINT"].format(lang)+"products"
         self.compose_request_query(products_ids)

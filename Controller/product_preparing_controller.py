@@ -24,7 +24,7 @@ def create_variants_configurale_map(items):
     return variants_configurables_map, variants_ids
 
 def create_configurale_child_map(variants_ids, variants_configurables_map, lang):
-    variants_data_retrival = DataRetrival(lang, variants_ids, lang)
+    variants_data_retrival = DataRetrival(lang, variants_ids)
 
     configurables_variants_map = {}
 
