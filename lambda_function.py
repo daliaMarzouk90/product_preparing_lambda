@@ -12,5 +12,5 @@ def lambda_handler(event, context):
     print("****************End*****************************")
     return {
         'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
+        'body': json.dumps('Product Preparing Lambda Finished!')
     }

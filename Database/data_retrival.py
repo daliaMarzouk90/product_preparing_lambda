@@ -1,7 +1,6 @@
 import json
 from Config import settings
 import requests
-import logging
 import sys
 from math import ceil
 
@@ -65,12 +64,14 @@ class DataRetrival:
         url = self.product_endpoint + self.base_query_string.format(page, count)
 
         logging.info("to hit {}".format(url))
+        print("to hit {}".format(url))
 
         response = requests.get(url)
+        print("after hitting")
 
         try:
             response = response.text.encode("utf-8")
             return json.loads(response)
         except Exception as e:
-            logging.error(e)
+            print(e)
             return {"items": [], "total_count": 0}

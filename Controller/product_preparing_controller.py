@@ -68,22 +68,29 @@ def create_products_messages(products_sets, configurables_variants_map):
 
 
 def run(lang, products_ids):
-    products_retrival = DataRetrival(lang, products_ids, lang)
+    products_retrival = DataRetrival(lang, products_ids)
     product_distributer = ProductDistributer()
     sqs_wrapper = SQSWrapper(lang)
 
     #1- catch products
     products = products_retrival.get_prducts_data(products_ids)
+    print("{}: catch products done".format(lang))
 
     #2- distribute products
     products_sets = product_distributer.distribute(products)
+    print("{}: distribute products done".format(lang))
 
     #3- get configurable variants
     configurables_variants_map = prepare_configurable_products_variants(products_sets["configurable"], lang=lang)
+    print("{}: get configurable variants done".format(lang))
 
     #3- create products messages
     messages = create_products_messages(products_sets, configurables_variants_map)
+    print("{}: create products messages done".format(lang))
 
     #4- push messages to products sqs
     sqs_wrapper.write_bulk_messages(messages)
+    print("{}: push messages to products sqs done".format(lang))
+    
+    return messages
     
