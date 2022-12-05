@@ -1,0 +1,22 @@
+{
+    "Records":[
+       {
+          "messageId":"85843725-817c-46f5-8028-12930793176b",
+          "receiptHandle":"AQEBOiQw5IGfU/+W9JnBn9vU2P9EmEceC3IPF6cuUZc6v5xcAk4ls8f3nUB+UF81GdswT2BGLO5MAaseja4QzxGgH8l2NUaIy4zKlRCaGxS026frV+UeOpxaDgT8nWWfauWkXUjjj+DcLWvf1GhR38LzS7aLdwrNfO9QcFoSXkPZS6Y/Y7hZ41WN1OVDcWBF7+FQ73d1h1TeNulxUYLrxrt/a1nXZFVwC9q3DXDzH5TNxLqGs69KrUF73KWkEm4hvrEZzXNTQ63MzCqMdhYqnnzDZRX/aDp1G4Hz42dBmsOwnKsiiiI/KDvA7wltQz2eUW1wp8QxKbUFJ3KiHnmHqJo8b04b7kyXuhK7Sad+UGky0DA+bJEeO3YkaomkQcnw2AyCq0jr7nRPrC0gLj1rSwp5yevWIlZGliVh/UqPa7FGktE=",
+          "body":"[{\"product_id\":\"1\"}]",
+          "attributes":{
+             "ApproximateReceiveCount":"1",
+             "SentTimestamp":"1670240653598",
+             "SenderId":"AIDASXZOQ4DX6GIODUFP6",
+             "ApproximateFirstReceiveTimestamp":"1670240653603"
+          },
+          "messageAttributes":{
+             
+          },
+          "md5OfBody":"8a147baeda4d8a13a4bd3c7e38100cd1",
+          "eventSource":"aws:sqs",
+          "eventSourceARN":"arn:aws:sqs:eu-central-1:188539265263:eg_updated_products_ids",
+          "awsRegion":"eu-central-1"
+       }
+    ]
+ }
