@@ -33,7 +33,6 @@ class DataRetrival:
         try:
             response = self.make_request(1, 1)
         except Exception as e:
-            logging.error(e)
             print(e)
             return 0
 
@@ -63,7 +62,6 @@ class DataRetrival:
         #response = None
         url = self.product_endpoint + self.base_query_string.format(page, count)
 
-        logging.info("to hit {}".format(url))
         print("to hit {}".format(url))
 
         response = requests.get(url)
