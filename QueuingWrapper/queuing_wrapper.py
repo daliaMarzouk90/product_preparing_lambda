@@ -29,4 +29,4 @@ class SQSWrapper:
 
         for start_idx in range(0, len(messages), 10):
             self.queue.send_messages(QueueUrl=self.queue.url,
-                                        Entries=[{"Id": str(x["body"]["id"]),"MessageBody": json.dumps(x) } for x in messages[start_idx:start_idx+10]])
+                                        Entries=[{"Id": str(x["sku"]),"MessageBody": json.dumps(x) } for x in messages[start_idx:start_idx+10]])
