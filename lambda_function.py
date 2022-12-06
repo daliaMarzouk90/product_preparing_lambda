@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     print("****************Start*****************************")
     products_ids = []
     for record in event["Records"]:
-        record_products_ids = [int(x["product_id"]) for x in json.loads(record["body"])]
+        record_products_ids = list(set(int(x["product_id"]) for x in json.loads(record["body"])))
         products_ids += record_products_ids
 
     product_preparing_controller.run("ar", products_ids)
